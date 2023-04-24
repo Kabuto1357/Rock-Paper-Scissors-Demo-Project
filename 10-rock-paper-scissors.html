@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+HTML creates the content of the website.
+CSS changes the appearance of the website.
+JavaScript makes the website interactive.
+-->
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles/10-rock-paper-scissors.css"> <!--Importing CSS code-->
+    </head>
+
+    <body>
+        <p class="title">Let's Play Rock Paper Scissors</p>
+        <h2 class="instruction-detail">Instructions</h2>
+        <div>
+            You will be playing Rock, Paper, Scissors against a computer. The game is played by clicking on one of the three possible emojis that represent a rock, paper, and scissors. 
+            
+            <ul><li>The rock is the closed fist emoji.</li>
+                <li>paper is the open hand emoji.</li>
+                <li>scissors is the piece sign emoji.</li>
+            </ul>
+            Rock wins against scissors; paper wins against rock; and scissors wins against paper. If both the player and computer throw the same hand signal, it is considered a tie. You can play an unlimited amount of times, when you're done, click the reset score button.
+        </div>
+        <h3 class="credit">This Project was Created By Kevin Rivers</h3>
+        <p class="credit-info">Special thanks to SuperSimpleDev on YouTube for HTML,CSS, and JavaScript lecture videos. </p>
+        <button onclick="
+        playGame('rock');
+        " class="move-button"> 
+        <img src="images/rock-emoji.png"
+        class="move-icon"></button>
+
+        <button onclick="
+        playGame('paper');
+        " class="move-button">
+        <img src="images/paper-emoji.png"
+        class="move-icon"></button>
+
+        <button onclick="playGame('scissors');
+        " class="move-button">
+        <img src="images/scissors-emoji.png" 
+        class="move-icon"></button>
+
+        <p class="js-result result"></p>
+        <p class="js-moves">
+        </p>
+        <p class="js-score" class="score"></p>
+        
+
+        <button onclick="
+            score.wins = 0;
+            score.losses = 0;
+            score.ties = 0;
+            localStorage.removeItem('score'); //Removes previous score from local storage.
+            updateScoreElement();
+        " class="reset-score-button">
+        Reset score
+        </button>
+       
+
+        <!--Upon either of the button clicks, the playGame function is called with the respective string.
+        OR to reset the score.-->
+        <script src="scripts/10-rock-paper-scissors.js">//Loading JS file onto webpage</script>
+    </body>
+</html>
